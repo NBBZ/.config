@@ -762,7 +762,7 @@ type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = #8d62a9
-content-background = #292d3e
+content-background = #2f1665
 
 [module/arrow2]
 ; grey to Blue
@@ -770,7 +770,7 @@ type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = #668bd7
-content-background = #8d62a9
+content-background = #2f1665
 
 [module/arrow3]
 ; grey to Blue
@@ -778,7 +778,7 @@ type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = #8b62a9
-content-background = #668bd7
+content-background = #2f1665
 
 ################################################################################
 ###############################################################################
@@ -790,11 +790,11 @@ content-background = #668bd7
 type = custom/script
 exec = ~/.config/polybar/scripts/check-all-updates.sh
 interval = 1000
-label = Updates: %output%
-format-foreground = #fefefe
-format-background = #8d62ad
+label = Upds: %output%
+format-foreground = #f2cefe
+format-background = #2f1665
 format-prefix = "  "
-format-prefix-foreground = #fefefe
+format-prefix-foreground = #f2cefe
 
 
 [module/aur-updates]
@@ -802,8 +802,8 @@ type = custom/script
 exec = cower -u | wc -l
 interval = 1000
 label = Aur: %output%
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = #f2cefe
+format-background = #2f1665
 format-prefix = "  "
 format-prefix-foreground = #FFBB00
 format-underline = #FFBB00
@@ -835,8 +835,8 @@ card = intel_backlight
 ;   <ramp>
 ;   <bar>
 format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = #f2cefe
+format-background = #2f1665
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -905,8 +905,8 @@ type = custom/script
 exec = ~/.config/polybar/scripts/compton.sh
 click-left = ~/.config/polybar/scripts/compton-toggle.sh
 interval = 5
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = #f2cefe
+format-background = #2f1665
 ;format-underline = #00AF02
 
 ################################################################################
@@ -917,11 +917,11 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = #f2cefe
+format-background = #2f1665
 ;   
 format-prefix = " "
-format-prefix-foreground = #cd1f3f
+format-prefix-foreground = #f2cefe
 format-underline = #645377
 
 ; Available tags:
@@ -972,10 +972,10 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = #fefefe
-format-background = #8d62ad
+format-foreground = #f2cefe
+format-background = #2f1665
 format-prefix = " "
-format-prefix-foreground = #fefefe
+format-prefix-foreground = #f2cefe
 
 label-font = 1
 
@@ -1007,9 +1007,9 @@ date-alt = " %a %b %d, %Y"
 time = %l:%M%p
 time-alt = %l:%M%p
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = #fefefe
-format-background = #668bd7
+format-prefix-foreground = #f2cefe
+format-foreground = #f2cefe
+format-background = #2f1665
 label = "%date% %time% "
 
 #################################################################
@@ -1183,10 +1183,10 @@ bar-used-empty-foreground = #ffffff
 
 format = <label> <bar-used>
 format-prefix = "  "
-format-prefix-foreground = #3384d0
+format-prefix-foreground = #f2cefe
 format-underline = #4B5665
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = #f2cefe
+format-background = #2f1665
 
 ################################################################################
 
@@ -1207,9 +1207,9 @@ label = %percentage_used%%
 
 format = Mem <label>
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = #fefefe
-format-background = #668bd7
+format-prefix-foreground = #f2cefe
+format-foreground = #f2cefe
+format-background = #2f1665
 
 ################################################################################
 
@@ -1317,8 +1317,8 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-foreground = #fefefe
-format-background = #668bd7
+format-foreground = #f2cefe
+format-background = #2f1665
 
 
 
@@ -1654,3 +1654,4 @@ format-background = ${colors.background}
 
 ###############################################################################
 # vim:ft=dosini
+
