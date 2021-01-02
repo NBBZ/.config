@@ -32,10 +32,16 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -142,6 +148,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="discord"] workspace number $ws2
+assign [class="spotify"] workspace number $ws3
 assign [class="Steam"] workspace number $ws4
 
 
@@ -184,17 +191,17 @@ bindsym $mod+r mode "resize"
 # bar {
 #
 # }
-exec_always feh --bg-scale /home/nbbz/Stuff/PIXnVIDS/wall.jpg
+exec_always feh --bg-scale /home/nbbz/Pictures/wallpapper.jpg
 
 gaps inner 10
 gaps outer 7
 for_window [class="^.*"] border pixel 0
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id /home/nbbz/.config/polybar/launch.sh
 
 floating_modifier Mod1
 
-exec  --no-startup-id "gxkb"
+exec_always gxkb
 
 exec  xrandr --output DVI-D-0 --auto --right-of HDMI-0
 
@@ -205,4 +212,14 @@ exec_always albert
 bindsym $mod+d exec albert show
 
 # config
-bindsym $mod+c exec atom .config/i3/config
+bindsym $mod+c exec atom .config/i3/config .config/polybar/config
+
+# dolphin
+bindsym $mod+g exec dolphin
+
+# brave
+bindsym $mod+t exec brave
+
+# authantication agent (passwort prompt)
+exec_always lxqt-policykit-agent
+
