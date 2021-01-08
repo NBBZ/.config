@@ -18,5 +18,6 @@ alias sr='sudo reboot'
 alias neofetchnoconf='neofetch --config-none'
 alias sublime='subl'
 alias cl='clear'
+alias sx='startx'
 
 neofetch
