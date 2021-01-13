@@ -197,7 +197,8 @@ gaps inner 10
 gaps outer 6
 for_window [class="^.*"] border pixel 4
 
-
+# no albert border
+for_window [class="albert"] border none
 
 
 # class                 border  backgr. text    indicator child_border
