@@ -214,12 +214,6 @@ exec_always --no-startup-id /home/nbbz/.config/polybar/launch.sh
 
 floating_modifier Mod1
 
-# languige switching
-exec_always setxkbmap -layout us,il
-exec_always setxkbmap -option 'grp:alt_shift_toggle'
-exec setxkbmap -layout us,il
-exec setxkbmap -option 'grp:alt_shift_toggle'
-
 exec  xrandr --output DVI-D-0 --auto --right-of HDMI-0
 
 exec_always picom --experimental-backend
@@ -240,8 +234,13 @@ bindsym $mod+t exec brave
 # authantication agent (passwort prompt)
 exec_always lxqt-policykit-agent
 
-# opentabletdriver
-exec_always otd
-
 # screengrab
 bindsym $mod+Print exec screengrab -f -m
+
+# next/previews workspace
+bindsym $mod+w workspace next
+bindsym $mod+s workspace prev
+
+# languige switching
+exec_always setxkbmap -layout us,il
+exec_always setxkbmap -option 'grp:alt_shift_toggle'
