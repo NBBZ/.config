@@ -106,7 +106,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=12;1"
 
 modules-left = desktops xwindow
 modules-center = spotify
-modules-right = memory spacer cpu spacer pavolume spacer date
+modules-right = memory spacer cpu spacer pavolume spacer uptime spacer date
 separator =
 
 ; ========================================================================================
@@ -409,5 +409,20 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 ###############################################################################
+
+[module/uptime]
+type = custom/script
+exec = uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{print $2}'
+interval = 10
+
+label = %output%
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.background}
+
+##############################################################################
 
 # vim:ft=dosini
