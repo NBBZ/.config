@@ -214,8 +214,6 @@ exec_always --no-startup-id /home/nbbz/.config/polybar/launch.sh
 
 floating_modifier Mod1
 
-exec  xrandr --output DVI-D-0 --auto --right-of HDMI-0
-
 exec_always picom --experimental-backend
 
 # start albert
