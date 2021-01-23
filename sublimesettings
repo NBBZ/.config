@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Flatron/Flatron.tmTheme",
+	"font_face": "mononoki Nerd Font Mono",
+	"font_size": 20,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Flatron.sublime-theme",
+	"hot_exit": false
+}
