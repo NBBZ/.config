@@ -106,7 +106,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=12;1"
 
 modules-left = desktops xwindow
 modules-center = spotify
-modules-right = memory spacer cpu spacer pavolume spacer uptime spacer date
+modules-right = memory spacer cpu spacer pavolume spacer battery spacer date
 separator =
 
 ; ========================================================================================
@@ -424,5 +424,54 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.background}
 
 ##############################################################################
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+label-full-background = ${colors.background}
+label-charging-background = ${colors.background}
+label-discharging-background = ${colors.background}
+
+label-full-foreground = ${colors.foreground}
+label-charging-foreground = ${colors.foreground}
+label-discharging-foreground = ${colors.foreground}
+
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+
+label-empty-background = ${colors.background}
+
+format-full-prefix = " "
+format-charging-prefix = " "
+format-discharging-prefix = " "
+
+format-full-prefix-foreground = ${colors.foreground}
+format-charging-prefix-foreground = ${colors.foreground}
+format-discharging-prefix-foreground = ${colors.foreground}
+
+format-full-prefix-background = ${colors.background}
+format-charging-prefix-background = ${colors.background}
+format-discharging-prefix-background = ${colors.background}
+
+###################################################################
 
 # vim:ft=dosini
