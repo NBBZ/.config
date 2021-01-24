@@ -201,8 +201,8 @@ fuzzy-match = false
 ;http://fontawesome.io/cheatsheet/
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
@@ -461,8 +461,8 @@ label-background = ${colors.background}
 label-empty-background = ${colors.background}
 
 format-full-prefix = " "
-format-charging-prefix = " "
-format-discharging-prefix = " "
+format-charging-prefix = " "
+format-discharging-prefix = " "
 
 format-full-prefix-foreground = ${colors.foreground}
 format-charging-prefix-foreground = ${colors.foreground}
