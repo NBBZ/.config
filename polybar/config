@@ -106,7 +106,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=12;1"
 
 modules-left = desktops xwindow
 modules-center = spotify
-modules-right = memory spacer cpu spacer pavolume spacer battery spacer date
+modules-right = memory spacer cpu spacer pavolume spacer uptime spacer date
 separator =
 
 ; ========================================================================================
@@ -201,8 +201,10 @@ fuzzy-match = false
 ;http://fontawesome.io/cheatsheet/
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-1 = 2;
+# ws-icon-1 = 2;
+ws-icon-2 = 3;
+# ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
