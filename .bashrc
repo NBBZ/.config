@@ -20,5 +20,11 @@ alias sublime='subl'
 alias cl='clear'
 alias sx='startx'
 alias sdn='shutdown now'
+alias vimi3='vim .config/i3/config'
+alias vimpoly='vim .config/polybar/config'
+alias vimkit='vim .config/kitty/kitty.conf'
+alias vimkitheme='vim .config/kitty/NBBZtheme.conf'
+alias vimbash='vim .bashrc'
+alias colorp='colorpicker'
 
 neofetch
