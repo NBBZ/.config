@@ -26,5 +26,8 @@ alias vimkit='vim .config/kitty/kitty.conf'
 alias vimkitheme='vim .config/kitty/NBBZtheme.conf'
 alias vimbash='vim .bashrc'
 alias colorp='colorpicker'
+alias wifilist='nmcli d wifi list'
+alias wificonnect='nmcli d wifi connect'
+alias wifiscan='nmcli d wifi rescan'
 
 neofetch
