@@ -238,7 +238,7 @@ bindsym $mod+d exec albert show
 
 # config
 # bindsym $mod+c exec subl .config/kitty/kitty.conf .config/kitty/NBBZtheme.conf .bashrc .config/polybar/config .config/i3/config
-bindsym $mod+c exec kitty -e vim -p .config/kitty/kitty.conf .config/kitty/NBBZtheme.conf .bashrc .config/polybar/config .config/i3/config
+bindsym $mod+c exec kitty -e vim -p .config/i3/config .config/polybar/config .bashrc .config/kitty/NBBZtheme.conf .config/kitty/kitty.conf
 
 # dolphin
 bindsym $mod+g exec dolphin
