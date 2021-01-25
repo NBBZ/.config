@@ -237,7 +237,8 @@ exec_always albert
 bindsym $mod+d exec albert show
 
 # config
-bindsym $mod+c exec subl .config/kitty/kitty.conf .config/kitty/NBBZtheme.conf .bashrc .config/polybar/config .config/i3/config
+# bindsym $mod+c exec subl .config/kitty/kitty.conf .config/kitty/NBBZtheme.conf .bashrc .config/polybar/config .config/i3/config
+bindsym $mod+c exec kitty -e vim -p .config/kitty/kitty.conf .config/kitty/NBBZtheme.conf .bashrc .config/polybar/config .config/i3/config
 
 # dolphin
 bindsym $mod+g exec dolphin
@@ -250,10 +251,6 @@ exec_always lxqt-policykit-agent
 
 # screengrab
 bindsym $mod+Print exec screengrab -f -m
-
-# next/previews workspace
-bindsym $mod+w workspace next
-bindsym $mod+s workspace prev
 
 # languige switching
 exec_always setxkbmap -layout us,il
