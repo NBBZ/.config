@@ -53,5 +53,12 @@ endif
 
 nmap <S-Enter> 0<Esc>
 nmap <CR> o<Esc>
+
 :set nu
 :set ic
+
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
