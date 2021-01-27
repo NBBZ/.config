@@ -4,18 +4,34 @@
 ;      \:\  \     /:/\:\  \     /:/\:\  \     /:/:|  |   
 ;  _____\:\  \   /:/ /::\__\   /:/ /::\__\   /:/|:|  |__ 
 ; /::::::::\__\ /:/_/:/\:|__| /:/_/:/\:|__| /:/ |:| /\__\
-; \:\~~\~~\/__/ \:\/:/ /:/  / \:\/:/ /:/  / \/__|:|/:/  /
+; \:\~~\~~\/__/ \:\/:/ /:/  / \:\/:/ /:/  / \/__|:|/:/  / polybar config
 ;  \:\  \        \::/_/:/  /   \::/_/:/  /      |:/:/  / 
 ;   \:\  \        \:\/:/  /     \:\/:/  /       |::/  /  
 ;    \:\__\        \::/  /       \::/  /        |:/  /   
 ;     \/__/         \/__/         \/__/         |/__/    
 
+;[colors]{{{
 
+[colors]
+background = #2f1665
+foreground = #f2cefe
+alert = #bd2c40
+volume-min = #a3be8c
+volume-med = #ebcb8b
+volume-max = #bf616a
+
+;}}}
+
+;[global/wm]{{{
 
 [global/wm]
 ;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
 margin-top = 0
 margin-bottom = 0
+
+;}}}
+
+;[settings]{{{
 
 [settings]
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
@@ -39,24 +55,25 @@ format-padding =
 format-margin =
 format-offset =
 
-[colors]
-; =======================
-background = #2f1665
-foreground = #f2cefe
-alert = #bd2c40
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
-; =======================
+;}}}
 
-################################################################################
-################################################################################
-############                         MAINBAR-I3                     ############
-################################################################################
-################################################################################
+;[bar/mainbar-i3]{{{
 
 [bar/mainbar-i3]
 ;https://github.com/jaagr/polybar/wiki/Configuration
+
+; ========================================================================================
+; ########################################################################################
+; ========================================================================================
+
+modules-left = desktops xwindow
+modules-center = spotify
+modules-right = memory spacer cpu spacer pavolume spacer uptime spacer date
+separator =
+
+; ========================================================================================
+; ########################################################################################
+; ======================================================================================== 
 
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
@@ -100,19 +117,6 @@ font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=12;1"
 
-; ========================================================================================
-; ########################################################################################
-; ========================================================================================
-
-modules-left = desktops xwindow
-modules-center = spotify
-modules-right = memory spacer cpu spacer pavolume spacer uptime spacer date
-separator =
-
-; ========================================================================================
-; ########################################################################################
-; ======================================================================================== 
-
 ;dim-value = 1.0
 
 tray-position = right
@@ -151,7 +155,9 @@ double-click-right =
 cursor-click =
 cursor-scroll =
 
-################################################################################
+;}}}
+
+;[module/desktops]{{{
 
 [module/desktops]
 ;https://github.com/jaagr/polybar/wiki/Module:-i3
@@ -269,7 +275,9 @@ label-urgent-padding = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-################################################################################
+;}}}
+
+;[module/spacer]{{{
 
 [module/spacer]
 type = custom/text
@@ -278,7 +286,9 @@ content-font = 2
 content-foreground = #2F1665
 content-background = #2F1665
 
-################################################################################
+;}}}
+
+;[module/arch-aur-updates]{{{
 
 [module/arch-aur-updates]
 type = custom/script
@@ -290,7 +300,9 @@ format-background = ${colors.background}
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground}
 
-################################################################################
+;}}}
+
+;[module/cpu]{{{
 
 [module/cpu]
 ;https://github.com/jaagr/polybar/wiki/Module:-cpu
@@ -319,7 +331,9 @@ format = <label>
 ;   %percentage-core[1-9]% - load percentage for specific core
 label = Cpu %percentage:3%%
 
-################################################################################
+;}}}
+
+;[module/date]{{{
 
 [module/date]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
@@ -338,7 +352,9 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = "%date% %time% "
 
-################################################################################
+;}}}
+
+;[module/memory]{{{
 
 [module/memory]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
@@ -361,7 +377,9 @@ format-prefix-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-################################################################################
+;}}}
+
+;[module/pavolume]{{{
 
 [module/pavolume]
 type = custom/script
@@ -375,7 +393,9 @@ scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-################################################################################
+;}}}
+
+;[module/spotify]{{{
 
 [module/spotify]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
@@ -392,7 +412,9 @@ format-prefix = ""
 format-prefix-foreground = ${colors.foreground}
 label = %output:0:150%
 
-################################################################################
+;}}}
+
+;[module/xwindow]{{{
 
 [module/xwindow]
 ;https://github.com/jaagr/polybar/wiki/Module:-xwindow
@@ -410,7 +432,9 @@ format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-###############################################################################
+;}}}
+
+;[module/uptime]{{{
 
 [module/uptime]
 type = custom/script
@@ -425,7 +449,9 @@ format-prefix = "  "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.background}
 
-##############################################################################
+;}}}
+
+;[module/battery]{{{
 
 [module/battery]
 type = internal/battery
@@ -474,6 +500,6 @@ format-full-prefix-background = ${colors.background}
 format-charging-prefix-background = ${colors.background}
 format-discharging-prefix-background = ${colors.background}
 
-###################################################################
+;}}}
 
 # vim:ft=dosini
