@@ -15,60 +15,7 @@
 #
 #
 #
-
-#: Other {{{
-
-# set the mod key to win
-set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:mononoki Nerd Font Mono 8
-
-# Use Mouse+$mod and Mouse+alt(Mod1) to drag floating windows to their wanted position
-floating_modifier $mod
-floating_modifier Mod1
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# apps open in specific desktops
-assign [class="discord"] workspace number $ws2
-assign [class="Spotify"] workspace number $ws3
-# assign [class="Steam"] workspace number $ws4
-
-# gaps
-gaps inner 10
-gaps outer 6
-
-# border width
-for_window [class="^.*"] border pixel 4
-
-# no albert border
-for_window [class="albert"] border none
-
-# borders and stuff
-# class                 border  backgr. text    indicator child_border
-client.focused          #FF00FC #FF00FC #ffffff #FF00FC   #FF00FC
-client.focused_inactive #845795 #845795 #ffffff #845795   #845795
-client.unfocused        #845795 #845795 #888888 #845795   #845795
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
-
-#: }}}
-
-#: Execs {{{
+# Execs {{{
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -88,7 +35,7 @@ exec_always --no-startup-id /home/nbbz/.config/polybar/launch.sh
 exec_always picom --experimental-backend
 
 # start albert
-exec_always albert
+exec albert
 
 # authantication agent (passwort prompt)
 exec_always lxqt-policykit-agent
@@ -100,7 +47,13 @@ exec_always setxkbmap -option 'grp:alt_shift_toggle'
 # nitrogen (wallpapper)
 exec_always nitrogen --restore
 
-#: }}}
+# faster moving with hjkl (when key held be fast as fuk boiiiiiiiiiiii)
+exec rate 300 50
+
+# caps lock become escape
+exec setxkbmap -option caps:escape
+
+# }}}
 
 #: Binds {{{
 
@@ -123,7 +76,7 @@ bindsym $mod+Print exec screengrab -f -m
 bindsym $mod+d exec albert show
 
 # config
-bindsym $mod+c exec kitty -e vim -p .config/i3/config .config/polybar/config .bashrc .config/kitty/NBBZtheme.conf .config/kitty/kitty.conf
+bindsym $mod+c exec kitty -e nvim -p .config/i3/config .config/polybar/config .bashrc .config/nvim/init.vim .config/nvim/vim-plug/plugins.vim .config/kitty/NBBZtheme.conf .config/kitty/kitty.conf
 
 # dolphin
 bindsym $mod+g exec dolphin
@@ -249,5 +202,57 @@ bindsym $mod+Shift+space focus mode_toggle
 
 # split in vertical orientation
 # bindsym $mod+v split v
+
+#: }}}
+
+#: Other {{{
+
+# set the mod key to win
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:mononoki Nerd Font Mono 8
+
+# Use Mouse+$mod and Mouse+alt(Mod1) to drag floating windows to their wanted position
+floating_modifier $mod
+floating_modifier Mod1
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# apps open in specific desktops
+assign [class="discord"] workspace number $ws2
+assign [class="Spotify"] workspace number $ws3
+# assign [class="Steam"] workspace number $ws4
+
+# gaps
+gaps inner 10
+gaps outer 6
+
+# border width
+for_window [class="^.*"] border pixel 4
+
+# no albert border
+for_window [class="albert"] border none
+
+# borders and stuff
+# class                 border  backgr. text    indicator child_border
+client.focused          #FF00FC #FF00FC #ffffff #FF00FC   #FF00FC
+client.focused_inactive #845795 #845795 #ffffff #845795   #845795
+client.unfocused        #845795 #845795 #888888 #845795   #845795
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
 
 #: }}}
